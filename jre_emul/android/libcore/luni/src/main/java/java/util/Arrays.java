@@ -136,11 +136,13 @@ public class Arrays {
         }
 
         /*-[
+        static unsigned long mutationHack = 1;
+
         - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
                                           objects:(__unsafe_unretained id *)stackbuf
                                             count:(NSUInteger)len {
           if (state->state == 0) {
-            state->mutationsPtr = (unsigned long *) &modCount_;
+            state->mutationsPtr = (unsigned long *) &mutationHack;
             state->itemsPtr = (__unsafe_unretained id *) (void *) a_->buffer_;
             state->state = 1;
             return a_->size_;

@@ -24,7 +24,7 @@ import com.google.j2objc.annotations.Weak;
  * LinkedList is an implementation of List, backed by a linked list. All
  * optional operations (adding, removing and replacing) are supported. The
  * elements can be any objects.
- * 
+ *
  * @since 1.2
  */
 public class LinkedList<E> extends AbstractSequentialList<E> implements
@@ -187,7 +187,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
      * elements contained in the specified {@code collection}. The order of the
      * elements in this new {@code LinkedList} will be determined by the
      * iteration order of {@code collection}.
-     * 
+     *
      * @param collection
      *            the collection of elements to add.
      */
@@ -201,7 +201,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
      * specified location. The object is inserted before any previous element at
      * the specified location. If the location is equal to the size of this
      * {@code LinkedList}, the object is added at the end.
-     * 
+     *
      * @param location
      *            the index at which to insert.
      * @param object
@@ -235,7 +235,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Adds the specified object at the end of this {@code LinkedList}.
-     * 
+     *
      * @param object
      *            the object to add.
      * @return always true
@@ -256,7 +256,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
      * Inserts the objects in the specified collection at the specified location
      * in this {@code LinkedList}. The objects are added in the order they are
      * returned from the collection's iterator.
-     * 
+     *
      * @param location
      *            the index at which to insert.
      * @param collection
@@ -310,7 +310,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Adds the objects in the specified Collection to this {@code LinkedList}.
-     * 
+     *
      * @param collection
      *            the collection of objects.
      * @return {@code true} if this {@code LinkedList} is modified,
@@ -343,7 +343,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Adds the specified object at the beginning of this {@code LinkedList}.
-     * 
+     *
      * @param object
      *            the object to add.
      */
@@ -358,7 +358,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Adds the specified object at the end of this {@code LinkedList}.
-     * 
+     *
      * @param object
      *            the object to add.
      */
@@ -373,7 +373,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Removes all elements from this {@code LinkedList}, leaving it empty.
-     * 
+     *
      * @see List#isEmpty
      * @see #size
      */
@@ -390,7 +390,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
     /**
      * Returns a new {@code LinkedList} with the same elements and size as this
      * {@code LinkedList}.
-     * 
+     *
      * @return a shallow copy of this {@code LinkedList}.
      * @see java.lang.Cloneable
      */
@@ -412,7 +412,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Searches this {@code LinkedList} for the specified object.
-     * 
+     *
      * @param object
      *            the object to search for.
      * @return {@code true} if {@code object} is an element of this
@@ -459,7 +459,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Returns the first element in this {@code LinkedList}.
-     * 
+     *
      * @return the first element.
      * @throws NoSuchElementException
      *             if this {@code LinkedList} is empty.
@@ -474,7 +474,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Returns the last element in this {@code LinkedList}.
-     * 
+     *
      * @return the last element
      * @throws NoSuchElementException
      *             if this {@code LinkedList} is empty
@@ -514,7 +514,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
     /**
      * Searches this {@code LinkedList} for the specified object and returns the
      * index of the last occurrence.
-     * 
+     *
      * @param object
      *            the object to search for
      * @return the index of the last occurrence of the object, or -1 if it was
@@ -548,7 +548,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
      * Returns a ListIterator on the elements of this {@code LinkedList}. The
      * elements are iterated in the same order that they occur in the
      * {@code LinkedList}. The iteration starts at the specified location.
-     * 
+     *
      * @param location
      *            the index at which to start the iteration
      * @return a ListIterator on the elements of this {@code LinkedList}
@@ -563,7 +563,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Removes the object at the specified location from this {@code LinkedList}.
-     * 
+     *
      * @param location
      *            the index of the object to remove
      * @return the removed object
@@ -620,7 +620,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Removes the first object from this {@code LinkedList}.
-     * 
+     *
      * @return the removed object.
      * @throws NoSuchElementException
      *             if this {@code LinkedList} is empty.
@@ -640,7 +640,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Removes the last object from this {@code LinkedList}.
-     * 
+     *
      * @return the removed object.
      * @throws NoSuchElementException
      *             if this {@code LinkedList} is empty.
@@ -661,7 +661,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
     /**
      * Replaces the element at the specified location in this {@code LinkedList}
      * with the specified object.
-     * 
+     *
      * @param location
      *            the index at which to put the specified object.
      * @param object
@@ -696,7 +696,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
 
     /**
      * Returns the number of elements in this {@code LinkedList}.
-     * 
+     *
      * @return the number of elements in this {@code LinkedList}.
      */
     @Override
@@ -733,12 +733,14 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements
     }
 
     /*-[
+    static unsigned long mutationHack = 1;
+
     - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
                                       objects:(__unsafe_unretained id *)stackbuf
                                         count:(NSUInteger)len {
       __unsafe_unretained JavaUtilLinkedList_Link *link = (ARCBRIDGE id) (void *) state->extra[0];
       if (!link) {
-        state->mutationsPtr = (unsigned long *) &modCount_;
+        state->mutationsPtr = (unsigned long *) &mutationHack;
         link = voidLink_->next_;
       }
       state->itemsPtr = stackbuf;
