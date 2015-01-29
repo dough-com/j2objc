@@ -318,11 +318,13 @@ void CopyWithMemmove(id __strong *buffer, NSUInteger src, NSUInteger dest, NSUIn
   [super dealloc];
 }
 
+static unsigned long mutationHack = 1;
+
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
                                   objects:(__unsafe_unretained id *)stackbuf
                                     count:(NSUInteger)len {
   if (state->state == 0) {
-    state->mutationsPtr = (unsigned long *) (ARCBRIDGE void *) self;
+    state->mutationsPtr = (unsigned long *) (ARCBRIDGE void *) &mutationHack;
     state->itemsPtr = (__unsafe_unretained id *) (void *) buffer_;
     state->state = 1;
     return size_;
